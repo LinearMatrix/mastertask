@@ -104,6 +104,29 @@ class mastertask {
                     //   TargetType.STAGE  - for code on the stage / backdrop
                     // remove one of these if this block doesn't apply to both
                     filter: [ TargetType.SPRITE, TargetType.STAGE ]
+                },
+                {
+                    // name of the function where your block code lives
+                    opcode: 'pi',
+
+                    // type of block - choose from:
+                    //   BlockType.REPORTER - returns a value, like "direction"
+                    //   BlockType.BOOLEAN - same as REPORTER but returns a true/false value
+                    //   BlockType.COMMAND - a normal command block, like "move {} steps"
+                    //   BlockType.HAT - starts a stack if its value changes from false to true ("edge triggered")
+                    blockType: BlockType.REPORTER,
+
+                    // label to display on the block
+                    text: 'π',
+
+                    // true if this block should end a stack
+                    terminal: false,
+
+                    // where this block should be available for code - choose from:
+                    //   TargetType.SPRITE - for code in sprites
+                    //   TargetType.STAGE  - for code on the stage / backdrop
+                    // remove one of these if this block doesn't apply to both
+                    filter: [ TargetType.SPRITE, TargetType.STAGE ]
                 }
             ]
         };
@@ -119,6 +142,9 @@ class mastertask {
     }
     euler () {
         return Math.E
+    }
+    pi () {
+        return Math.PI
     }
 }
 
