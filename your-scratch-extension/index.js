@@ -31,59 +31,6 @@ class mastertask {
             blocks: [
                 {
                     // name of the function where your block code lives
-                    opcode: 'pow',
-
-                    // type of block - choose from:
-                    //   BlockType.REPORTER - returns a value, like "direction"
-                    //   BlockType.BOOLEAN - same as REPORTER but returns a true/false value
-                    //   BlockType.COMMAND - a normal command block, like "move {} steps"
-                    //   BlockType.HAT - starts a stack if its value changes from false to true ("edge triggered")
-                    blockType: BlockType.REPORTER,
-
-                    // label to display on the block
-                    text: '[VALUE] ^ [VALUEBY]',
-
-                    // true if this block should end a stack
-                    terminal: false,
-
-                    // where this block should be available for code - choose from:
-                    //   TargetType.SPRITE - for code in sprites
-                    //   TargetType.STAGE  - for code on the stage / backdrop
-                    // remove one of these if this block doesn't apply to both
-                    filter: [ TargetType.SPRITE, TargetType.STAGE ],
-
-                    // arguments used in the block
-                    arguments: {
-                        VALUE: {
-                            // default value before the user sets something
-                            defaultValue: '',
-
-                            // type/shape of the parameter - choose from:
-                            //     ArgumentType.ANGLE - numeric value with an angle picker
-                            //     ArgumentType.BOOLEAN - true/false value
-                            //     ArgumentType.COLOR - numeric value with a colour picker
-                            //     ArgumentType.NUMBER - numeric value
-                            //     ArgumentType.STRING - text value
-                            //     ArgumentType.NOTE - midi music value with a piano picker
-                            type: ArgumentType.NUMBER
-                        },
-                        VALUEBY: {
-                            // default value before the user sets something
-                            defaultValue: '',
-
-                            // type/shape of the parameter - choose from:
-                            //     ArgumentType.ANGLE - numeric value with an angle picker
-                            //     ArgumentType.BOOLEAN - true/false value
-                            //     ArgumentType.COLOR - numeric value with a colour picker
-                            //     ArgumentType.NUMBER - numeric value
-                            //     ArgumentType.STRING - text value
-                            //     ArgumentType.NOTE - midi music value with a piano picker
-                            type: ArgumentType.NUMBER
-                        }
-                    }
-                },
-                {
-                    // name of the function where your block code lives
                     opcode: 'euler',
 
                     // type of block - choose from:
@@ -127,8 +74,182 @@ class mastertask {
                     //   TargetType.STAGE  - for code on the stage / backdrop
                     // remove one of these if this block doesn't apply to both
                     filter: [ TargetType.SPRITE, TargetType.STAGE ]
+                },
+                {
+                    // name of the function where your block code lives
+                    opcode: 'pythagoras',
+
+                    // type of block - choose from:
+                    //   BlockType.REPORTER - returns a value, like "direction"
+                    //   BlockType.BOOLEAN - same as REPORTER but returns a true/false value
+                    //   BlockType.COMMAND - a normal command block, like "move {} steps"
+                    //   BlockType.HAT - starts a stack if its value changes from false to true ("edge triggered")
+                    blockType: BlockType.REPORTER,
+
+                    // label to display on the block
+                    text: '√2',
+
+                    // true if this block should end a stack
+                    terminal: false,
+
+                    // where this block should be available for code - choose from:
+                    //   TargetType.SPRITE - for code in sprites
+                    //   TargetType.STAGE  - for code on the stage / backdrop
+                    // remove one of these if this block doesn't apply to both
+                    filter: [ TargetType.SPRITE, TargetType.STAGE ]
+                },
+                {
+                    // name of the function where your block code lives
+                    opcode: 'theodorus',
+
+                    // type of block - choose from:
+                    //   BlockType.REPORTER - returns a value, like "direction"
+                    //   BlockType.BOOLEAN - same as REPORTER but returns a true/false value
+                    //   BlockType.COMMAND - a normal command block, like "move {} steps"
+                    //   BlockType.HAT - starts a stack if its value changes from false to true ("edge triggered")
+                    blockType: BlockType.REPORTER,
+
+                    // label to display on the block
+                    text: '√3',
+
+                    // true if this block should end a stack
+                    terminal: false,
+
+                    // where this block should be available for code - choose from:
+                    //   TargetType.SPRITE - for code in sprites
+                    //   TargetType.STAGE  - for code on the stage / backdrop
+                    // remove one of these if this block doesn't apply to both
+                    filter: [ TargetType.SPRITE, TargetType.STAGE ]
+                },
+                {
+                    // name of the function where your block code lives
+                    opcode: 'boolop',
+
+                    // type of block - choose from:
+                    //   BlockType.REPORTER - returns a value, like "direction"
+                    //   BlockType.BOOLEAN - same as REPORTER but returns a true/false value
+                    //   BlockType.COMMAND - a normal command block, like "move {} steps"
+                    //   BlockType.HAT - starts a stack if its value changes from false to true ("edge triggered")
+                    blockType: BlockType.BOOLEAN,
+
+                    // label to display on the block
+                    text: '[BOOLOPS]',
+
+                    // true if this block should end a stack
+                    terminal: false,
+
+                    // where this block should be available for code - choose from:
+                    //   TargetType.SPRITE - for code in sprites
+                    //   TargetType.STAGE  - for code on the stage / backdrop
+                    // remove one of these if this block doesn't apply to both
+                    filter: [ TargetType.SPRITE, TargetType.STAGE ],
+                    arguments: {
+                        BOOLOPS: {
+                            type: ArgumentType.STRING,
+                            menu: 'boolops'
+                        }
+                    }
+                },
+                {
+                    // name of the function where your block code lives
+                    opcode: 'pow',
+
+                    // type of block - choose from:
+                    //   BlockType.REPORTER - returns a value, like "direction"
+                    //   BlockType.BOOLEAN - same as REPORTER but returns a true/false value
+                    //   BlockType.COMMAND - a normal command block, like "move {} steps"
+                    //   BlockType.HAT - starts a stack if its value changes from false to true ("edge triggered")
+                    blockType: BlockType.REPORTER,
+
+                    // label to display on the block
+                    text: '[VALUE] ^ [VALUEBY]',
+
+                    // true if this block should end a stack
+                    terminal: false,
+
+                    // where this block should be available for code - choose from:
+                    //   TargetType.SPRITE - for code in sprites
+                    //   TargetType.STAGE  - for code on the stage / backdrop
+                    // remove one of these if this block doesn't apply to both
+                    filter: [ TargetType.SPRITE, TargetType.STAGE ],
+
+                    // arguments used in the block
+                    arguments: {
+                        VALUE: {
+                            // type/shape of the parameter - choose from:
+                            //     ArgumentType.ANGLE - numeric value with an angle picker
+                            //     ArgumentType.BOOLEAN - true/false value
+                            //     ArgumentType.COLOR - numeric value with a colour picker
+                            //     ArgumentType.NUMBER - numeric value
+                            //     ArgumentType.STRING - text value
+                            //     ArgumentType.NOTE - midi music value with a piano picker
+                            type: ArgumentType.NUMBER
+                        },
+                        VALUEBY: {
+                            // type/shape of the parameter - choose from:
+                            //     ArgumentType.ANGLE - numeric value with an angle picker
+                            //     ArgumentType.BOOLEAN - true/false value
+                            //     ArgumentType.COLOR - numeric value with a colour picker
+                            //     ArgumentType.NUMBER - numeric value
+                            //     ArgumentType.STRING - text value
+                            //     ArgumentType.NOTE - midi music value with a piano picker
+                            type: ArgumentType.NUMBER
+                        }
+                    }
+                },
+                {
+                    // name of the function where your block code lives
+                    opcode: 'hypotenuse',
+
+                    // type of block - choose from:
+                    //   BlockType.REPORTER - returns a value, like "direction"
+                    //   BlockType.BOOLEAN - same as REPORTER but returns a true/false value
+                    //   BlockType.COMMAND - a normal command block, like "move {} steps"
+                    //   BlockType.HAT - starts a stack if its value changes from false to true ("edge triggered")
+                    blockType: BlockType.REPORTER,
+
+                    // label to display on the block
+                    text: 'hypotenuse of A: [A] B: [B]',
+
+                    // true if this block should end a stack
+                    terminal: false,
+
+                    // where this block should be available for code - choose from:
+                    //   TargetType.SPRITE - for code in sprites
+                    //   TargetType.STAGE  - for code on the stage / backdrop
+                    // remove one of these if this block doesn't apply to both
+                    filter: [ TargetType.SPRITE, TargetType.STAGE ],
+
+                    // arguments used in the block
+                    arguments: {
+                        A: {
+                            // type/shape of the parameter - choose from:
+                            //     ArgumentType.ANGLE - numeric value with an angle picker
+                            //     ArgumentType.BOOLEAN - true/false value
+                            //     ArgumentType.COLOR - numeric value with a colour picker
+                            //     ArgumentType.NUMBER - numeric value
+                            //     ArgumentType.STRING - text value
+                            //     ArgumentType.NOTE - midi music value with a piano picker
+                            type: ArgumentType.NUMBER
+                        },
+                        B: {
+                            // type/shape of the parameter - choose from:
+                            //     ArgumentType.ANGLE - numeric value with an angle picker
+                            //     ArgumentType.BOOLEAN - true/false value
+                            //     ArgumentType.COLOR - numeric value with a colour picker
+                            //     ArgumentType.NUMBER - numeric value
+                            //     ArgumentType.STRING - text value
+                            //     ArgumentType.NOTE - midi music value with a piano picker
+                            type: ArgumentType.NUMBER
+                        }
+                    }
                 }
-            ]
+            ],
+            menus: {
+                boolops: {
+                    items: ['true','false']
+                }
+            }
         };
     }
 
@@ -139,6 +260,22 @@ class mastertask {
      */
     pow ({ VALUE, VALUEBY }) {
         return Math.pow(VALUE,VALUEBY)
+    }
+    boolop ({BOOLOPS}) {
+        if (BOOLOPS=='true'){
+            return true
+        }else if(BOOLOPS=='false'){
+            return false
+        }
+    }
+    hypotenuse ({A,B}){
+        return Math.sqrt((A*A)+(B*B))
+    }
+    pythagoras () {
+        return Math.sqrt(2)
+    }
+    theodorus () {
+        return Math.sqrt(3)
     }
     euler () {
         return Math.E
