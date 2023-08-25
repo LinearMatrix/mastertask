@@ -198,6 +198,22 @@ class mastertask {
                     }
                 },
                 {
+                    opcode: 'maxmin',
+                    blockType: BlockType.REPORTER,
+                    text: '[MAXMIN] of [LIST]',
+                    terminal: false,
+                    filter: [TargetType.SPRITE,TargetType.STAGE],
+                    arguments: {
+                        MAXMIN: {
+                            type: ArgumentType.STRING,
+                            menu: 'maxminmenu'
+                        },
+                        LIST: {
+                            type: ArgumentType.NUMBER
+                        }
+                    }
+                },
+                {
                     // name of the function where your block code lives
                     opcode: 'hypotenuse',
 
@@ -248,6 +264,9 @@ class mastertask {
             menus: {
                 boolops: {
                     items: ['true','false']
+                },
+                maxminmenu: {
+                    items: ['max','min']
                 }
             }
         };
@@ -276,6 +295,9 @@ class mastertask {
     }
     theodorus () {
         return Math.sqrt(3)
+    }
+    maxmin ({MAXMIN,LIST}) {
+        return LIST
     }
     euler () {
         return Math.E
