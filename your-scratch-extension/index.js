@@ -198,20 +198,11 @@ class mastertask {
                     }
                 },
                 {
-                    opcode: 'maxmin',
+                    opcode: 'keypressed',
                     blockType: BlockType.REPORTER,
-                    text: '[MAXMIN] of [LIST]',
+                    text: 'key pressed',
                     terminal: false,
                     filter: [TargetType.SPRITE,TargetType.STAGE],
-                    arguments: {
-                        MAXMIN: {
-                            type: ArgumentType.STRING,
-                            menu: 'maxminmenu'
-                        },
-                        LIST: {
-                            type: ArgumentType.NUMBER
-                        }
-                    }
                 },
                 {
                     // name of the function where your block code lives
@@ -264,9 +255,6 @@ class mastertask {
             menus: {
                 boolops: {
                     items: ['true','false']
-                },
-                maxminmenu: {
-                    items: ['max','min']
                 }
             }
         };
@@ -293,11 +281,13 @@ class mastertask {
     pythagoras () {
         return Math.sqrt(2)
     }
+    keypressed () {
+        window.addEventListener("keydown",function(event){
+            return event.key
+        })
+    }
     theodorus () {
         return Math.sqrt(3)
-    }
-    maxmin ({MAXMIN,LIST}) {
-        return LIST
     }
     euler () {
         return Math.E
