@@ -294,21 +294,24 @@ class mastertask {
         return Math.sqrt(2)
     }
     isn ({NUM},{ISN}) {
-        if (ISN=="an even"){
+        if (ISN=='an even'){
             if (NUM%2==0){
                 return true
             }
-        }else if (ISN=="an odd"){
+        }
+        if (ISN=='an odd'){
             if (NUM%2!=0){
                 return true
             }
-        }else if(ISN=="a prime"){
+        }
+        if(ISN=='a prime'){
             for (let i = 2; i * i <= NUM; i++){
                 if (NUM % i === 0)
                 return false;
             } 
             return NUM > 1;
-        }else if(ISN=="a composite"){
+        }
+        if(ISN=='a composite'){
             let count=0
             for(let i=1;i<=NUM;i++){
                 if(NUM%i==0){
@@ -319,7 +322,8 @@ class mastertask {
                 return true;
             }
             return false;
-        }else if(ISN=="a palindrome"){
+        }
+        if(ISN=='a palindrome'){
             let copy=NUM
             let rev=0
             while(copy!=0){
@@ -331,7 +335,8 @@ class mastertask {
                 return true
             }
             return false
-        }else if(ISN=="an armstrong"){
+        }
+        if(ISN=='an armstrong'){
             let copy=NUM
             let digs=0
             let rem=0
@@ -350,7 +355,8 @@ class mastertask {
                 return true
             }
             return false
-        }else if(ISN=="a perfect"){
+        }
+        if(ISN=='a perfect'){
             let total=0
             for(let i=1;i<NUM;i++){
                 if(NUM%i==0){
