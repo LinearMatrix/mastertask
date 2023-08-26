@@ -306,10 +306,11 @@ class mastertask {
         }
         if(ISN=='a prime'){
             for (let i = 2; i * i <= NUM; i++){
-                if (NUM % i === 0)
-                return false;
+                if (NUM % i === 0){
+                    return false
+                }
             } 
-            return NUM > 1;
+            return NUM > 1
         }
         if(ISN=='a composite'){
             let count=0
@@ -319,9 +320,9 @@ class mastertask {
                 }
             }
             if(count>2){
-                return true;
+                return true
             }
-            return false;
+            return false
         }
         if(ISN=='a palindrome'){
             let copy=NUM
