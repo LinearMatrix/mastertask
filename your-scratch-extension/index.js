@@ -243,6 +243,21 @@ class mastertask {
                             type: ArgumentType.NUMBER
                         }
                     }
+                },
+                {
+                    opcode: 'xor',
+                    blockType: BlockType.BOOLEAN,
+                    text: '[A] xor [B]',
+                    terminal: false,
+                    filter: [TargetType.SPRITE,TargetType.STAGE],
+                    arguments:{
+                        A:{
+                            type: ArgumentType.BOOLEAN
+                        },
+                        B:{
+                            type: ArgumentType.BOOLEAN
+                        }
+                    }
                 }
             ],
             menus: {
@@ -282,6 +297,9 @@ class mastertask {
     }
     pi () {
         return Math.PI
+    }
+    xor ({A,B}) {
+        return ( A || B ) && !( A && B );
     }
 }
 
