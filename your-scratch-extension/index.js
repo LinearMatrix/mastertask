@@ -151,22 +151,6 @@ class mastertask {
                     }
                 },
                 {
-                    opcode:'isn',
-                    blockType:BlockType.BOOLEAN,
-                    text:'is [NUM] [ISN] number?',
-                    terminal:false,
-                    filter:[TargetType.SPRITE,TargetType.STAGE],
-                    arguments:{
-                        NUM:{
-                            type:ArgumentType.NUMBER
-                        },
-                        ISN:{
-                            type:ArgumentType.STRING,
-                            menu:'isn'
-                        }
-                    }
-                },
-                {
                     // name of the function where your block code lives
                     opcode: 'pow',
 
@@ -264,9 +248,6 @@ class mastertask {
             menus: {
                 boolops: {
                     items: ['true','false']
-                },
-                isn:{
-                    items:['an even','an odd', 'a prime', 'a composite', 'a palindrome', 'an armstrong', 'a perfect']
                 }
             }
         };
@@ -292,83 +273,6 @@ class mastertask {
     }
     pythagoras () {
         return Math.sqrt(2)
-    }
-    isn ({NUM},{ISN}) {
-        if (ISN=='an even'){
-            if (NUM%2==0){
-                return true
-            }
-        }
-        if (ISN=='an odd'){
-            if (NUM%2!=0){
-                return true
-            }
-        }
-        if(ISN=='a prime'){
-            for (let i = 2; i * i <= NUM; i++){
-                if (NUM % i === 0){
-                    return false
-                }
-            } 
-            return NUM > 1
-        }
-        if(ISN=='a composite'){
-            let count=0
-            for(let i=1;i<=NUM;i++){
-                if(NUM%i==0){
-                    count++
-                }
-            }
-            if(count>2){
-                return true
-            }
-            return false
-        }
-        if(ISN=='a palindrome'){
-            let copy=NUM
-            let rev=0
-            while(copy!=0){
-                rev=rev*10
-                rev=rev+(copy%10)
-                copy=Math.floor(copy/10)
-            }
-            if(NUM==rev){
-                return true
-            }
-            return false
-        }
-        if(ISN=='an armstrong'){
-            let copy=NUM
-            let digs=0
-            let rem=0
-            let total=0
-            while(copy!=0){
-                digs++
-                copy=Math.floor(copy/10)
-            }
-            copy=NUM
-            while(copy!=0){
-                rem=copy%10
-                total+=Math.pow(rem,digs)
-                copy=Math.floor(copy/10)
-            }
-            if(NUM==total){
-                return true
-            }
-            return false
-        }
-        if(ISN=='a perfect'){
-            let total=0
-            for(let i=1;i<NUM;i++){
-                if(NUM%i==0){
-                    total+=i
-                }
-            }
-            if (total=NUM){
-                return true
-            }
-            return false
-        }
     }
     theodorus () {
         return Math.sqrt(3)
